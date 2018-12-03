@@ -5,14 +5,9 @@ namespace PBZ_2.Data
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext()
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureCreated();
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=PBZ2DB;Trusted_Connection=True;");
         }
 
         public DbSet<Company> Companies { get; set; }

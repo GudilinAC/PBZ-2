@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PBZ_2.Models.PriceList>
+
+@{
+    ViewData["Title"] = "Companies";
+}
+
+<h2>Companies</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <strong>Product name</strong>
+            </th>
+            <th>
+                <strong>Date</strong>
+            </th>
+            <th>
+                <strong>Company name</strong>
+            </th>
+            <th>
+                <strong>Town</strong>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Product.Name
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td>
+                    @item.Company.Name
+                </td>
+                <td>
+                    @item.Company.Town
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

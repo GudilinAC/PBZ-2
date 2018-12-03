@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PBZ_2.Models.Company>
+@{
+    ViewData["Title"] = "AltCompanies";
+}
+
+<h2>AltCompanies</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <strong>Name</strong>
+            </th>
+            <th>
+                <strong>Telephone</strong>
+            </th>
+            <th>
+                <strong>Contact person</strong>
+            </th>
+            <th>
+                <strong>Date</strong>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Tel
+                </td>
+                <td>
+                    @item.FIOCP
+                </td>
+                <td>
+                    @item.Date
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

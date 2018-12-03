@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<PBZ_2.Models.Company>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Companies";
 }
 
-<h2>Index</h2>
+<h2>Companies</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,77 +13,83 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SK)
+                <strong>Name</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                <strong>Kode</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tel)
+                <strong>Adress</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FIOBoss)
+                <strong>Telephone</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.positionBoss)
+                <strong>Boss</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TelMD)
+                <strong>Boss position</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TelMDBoss)
+                <strong>MD telephone </strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FIOCP)
+                <strong>MD boss telephone</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Town)
+                <strong>Contact person</strong>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                <strong>Town</strong>
+            </th>
+            <th>
+                <strong>Date</strong>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FIOBoss)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.positionBoss)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TelMD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TelMDBoss)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FIOCP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Town)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Name">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Name">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Name">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="PriseLists" asp-route-name="@item.Name">@item.Name</a>
+                </td>
+                <td>
+                    @item.SK
+                </td>
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.Tel
+                </td>
+                <td>
+                    @item.FIOBoss
+                </td>
+                <td>
+                    @item.positionBoss
+                </td>
+                <td>
+                    @item.TelMD
+                </td>
+                <td>
+                    @item.TelMDBoss
+                </td>
+                <td>
+                    @item.FIOCP
+                </td>
+                <td>
+                    @item.Town
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Name">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Name">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

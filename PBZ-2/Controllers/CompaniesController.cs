@@ -25,6 +25,11 @@ namespace PBZ_2.Controllers
             return View(await _context.Companies.ToListAsync());
         }
 
+        public async Task<IActionResult> AltCompanies()
+        {
+            return View(await _context.Companies.ToListAsync());
+        }
+
         // GET: Companies/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -62,7 +67,7 @@ namespace PBZ_2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return RedirectToAction("Index");
         }
 
         // GET: Companies/Edit/5
@@ -113,7 +118,25 @@ namespace PBZ_2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> PriseLists(string name)
+        {
+            var product = await _context.PriceLists
+                .Include(c => c.Company)
+                .Where(c => c.Company.Name == name)
+                .Include(p => p.Product)
+                .ThenInclude(c => c.Category)
+                .GroupBy(a => a.Product.Category.Id)
+                .SelectMany(m => m)
+                .ToListAsync();
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
         }
 
         // GET: Companies/Delete/5
