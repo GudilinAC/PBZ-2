@@ -1,0 +1,75 @@
+﻿@model PBZ_2.Models.Company
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SK" class="control-label"></label>
+                <input asp-for="SK" class="form-control" />
+                <span asp-validation-for="SK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel" class="control-label"></label>
+                <input asp-for="Tel" class="form-control" />
+                <span asp-validation-for="Tel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FIOBoss" class="control-label"></label>
+                <input asp-for="FIOBoss" class="form-control" />
+                <span asp-validation-for="FIOBoss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="positionBoss" class="control-label"></label>
+                <input asp-for="positionBoss" class="form-control" />
+                <span asp-validation-for="positionBoss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelMD" class="control-label"></label>
+                <input asp-for="TelMD" class="form-control" />
+                <span asp-validation-for="TelMD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelMDBoss" class="control-label"></label>
+                <input asp-for="TelMDBoss" class="form-control" />
+                <span asp-validation-for="TelMDBoss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FIOCP" class="control-label"></label>
+                <input asp-for="FIOCP" class="form-control" />
+                <span asp-validation-for="FIOCP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Town" class="control-label"></label>
+                <input asp-for="Town" class="form-control" />
+                <span asp-validation-for="Town" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

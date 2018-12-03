@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PBZ_2.Models.Company>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FIOBoss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.positionBoss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelMD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelMDBoss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FIOCP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Town)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIOBoss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.positionBoss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelMD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelMDBoss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIOCP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Town)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Name">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Name">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Name">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
